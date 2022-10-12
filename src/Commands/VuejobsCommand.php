@@ -28,7 +28,7 @@ class VuejobsCommand extends Command
             ->collect()
             ->sortByDesc('published_at.date');
 
-        render(view('devjobs.index', [
+        render(view('artisan-devjobs::devjobs', [
             'jobs' => collect($jobs),
             'timezone' => $this->option('timezone') == 'default'
                 ? config('app.timezone')

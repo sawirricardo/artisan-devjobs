@@ -17,7 +17,7 @@ class LarajobsCommand extends Command
         $jobs = Http::get('https://larajobs.com/api/jobs')
             ->collect()
             ->sortByDesc('published_at');
-        render(view('devjobs.index', [
+        render(view('artisan-devjobs::devjobs', [
             'jobs' => collect($jobs)
                 ->when(! empty($this->argument('tags')), function ($jobs) {
                     return $jobs->filter(fn ($job) => collect($job['tags'])->whereIn('name', $this->argument('tags'))->isNotEmpty()
