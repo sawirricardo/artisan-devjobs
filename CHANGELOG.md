@@ -2,6 +2,10 @@
 
 All notable changes to `artisan-devjobs` will be documented in this file.
 
+## 0.0.6 - 2022-10-12
+
+bugfixes
+
 ## 0.0.5 - 2022-10-12
 
 bugfix in the view
