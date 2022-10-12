@@ -2,11 +2,10 @@
 
 namespace Sawirricardo\ArtisanDevjobs;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Sawirricardo\ArtisanDevjobs\Commands\ArtisanDevjobsCommand;
 use Sawirricardo\ArtisanDevjobs\Commands\LarajobsCommand;
 use Sawirricardo\ArtisanDevjobs\Commands\VuejobsCommand;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class ArtisanDevjobsServiceProvider extends PackageServiceProvider
 {

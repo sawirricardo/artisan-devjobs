@@ -4,7 +4,6 @@ namespace Sawirricardo\ArtisanDevjobs\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
-
 use function Termwind\render;
 
 class LarajobsCommand extends Command
@@ -28,6 +27,7 @@ class LarajobsCommand extends Command
                 ? config('app.timezone')
                 : $this->option('timezone'),
         ])->render());
+
         return Command::SUCCESS;
     }
 }
