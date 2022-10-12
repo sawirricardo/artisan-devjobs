@@ -13,20 +13,15 @@ class VuejobsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'devjobs:vuejobs {tags?*} {--T|timezone=default}';
+    protected $signature = 'devjobs:vuejobs {tags?*} {--T|timezone=default} {--D|desc}';
 
     protected $description = 'List Vuejobs postings';
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
     public function handle()
     {
         $jobs = Http::get('https://vuejobs.com/api/jobs')
             ->collect()
-            ->sortByDesc('published_at.date');
+            ->sortBy('published_at.date', SORT_REGULAR, $this->option('desc'));
 
         render(view('artisan-devjobs::devjobs', [
             'jobs' => collect($jobs),

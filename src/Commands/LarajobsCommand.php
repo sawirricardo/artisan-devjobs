@@ -8,7 +8,7 @@ use function Termwind\render;
 
 class LarajobsCommand extends Command
 {
-    protected $signature = 'devjobs:larajobs {tags?*} {--T|timezone=default}';
+    protected $signature = 'devjobs:larajobs {tags?*} {--T|timezone=default} {--D|desc}';
 
     protected $description = 'List Larajobs postings';
 
@@ -16,7 +16,8 @@ class LarajobsCommand extends Command
     {
         $jobs = Http::get('https://larajobs.com/api/jobs')
             ->collect()
-            ->sortByDesc('published_at');
+            ->sortBy('published_at', SORT_REGULAR, $this->option('desc'));
+
         render(view('artisan-devjobs::devjobs', [
             'jobs' => collect($jobs)
                 ->when(! empty($this->argument('tags')), function ($jobs) {
