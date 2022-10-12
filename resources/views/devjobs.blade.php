@@ -19,7 +19,7 @@
                 <span>{{ $job['location'] }} | {{ $organization }} | {{ $publishedAtForHumans }} | {{ $publishedAt }} | {{ $job['type'] }} |
                     {{ $salary }}</span>
                 <br />
-                @if (array_key_exists($job, 'tags'))
+                @if (data_get($job, 'tags'))
                     <span>{{ collect($job['tags'])->map(fn($tag) => $tag['name'])->join(', ') }}</span>
                 @endif
             </div>
