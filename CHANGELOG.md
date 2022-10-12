@@ -2,6 +2,10 @@
 
 All notable changes to `artisan-devjobs` will be documented in this file.
 
+## 0.0.4 - 2022-10-12
+
+bugfix cannot view file
+
 ## 0.0.3 - 2022-10-12
 
 update readme, use --dev, unless you want to install in prod
