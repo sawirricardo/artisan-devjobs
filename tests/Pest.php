@@ -21,11 +21,11 @@ uses(TestCase::class)
                         ['name' => 'vue', 'slug' => 'vue'],
                         ['name' => 'react', 'slug' => 'react'],
                         ['name' => 'senior', 'slug' => 'senior'],
-                    ]
+                    ],
                 ],
             ], 200),
             'vuejobs.com/*' => Http::response([
-                    [
+                [
                     'id' => 2760,
                     'company' => [
                         'name' => 'Test',
@@ -38,7 +38,7 @@ uses(TestCase::class)
                         'date' => '2022-10-12',
                         'for_humans' => '5 hours ago',
                     ],
-                ]
+                ],
             ], 200),
         ]);
     })
