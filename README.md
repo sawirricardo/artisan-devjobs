@@ -20,7 +20,7 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require sawirricardo/artisan-devjobs
+composer require sawirricardo/artisan-devjobs --dev
 ```
 
 Optionally, you can publish the views using
