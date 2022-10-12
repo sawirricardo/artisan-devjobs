@@ -9,15 +9,15 @@
                         $publishedAt = $job['published_at']['date'];
                         $publishedAtForHumans = $job['published_at']['for_humans'];
                     } elseif (is_string($job['published_at'])) {
-                        $publishedAt = \Carbon\Carbon::parse($job['published_at'])
-                            ->timezone($timezone)
-                            ->format('Y-m-d H:i:s e');
+                        $publishedAt = \Carbon\Carbon::parse($job['published_at'])->timezone($timezone);
                         $publishedAtForHumans = $publishedAt->diffForHumans();
+                        $publishedAt = $publishedAt->format('Y-m-d H:i:s e');
                     }
                     $organization = $job['organization'] ?? $job['company']['name'];
+                    $salary = data_get($job, 'salary');
                 @endphp
                 <span>{{ $job['location'] }} | {{ $organization }} | {{ $publishedAtForHumans }} | {{ $publishedAt }} | {{ $job['type'] }} |
-                    {{ $job['salary'] }}</span>
+                    {{ $salary }}</span>
                 <br />
                 @if (array_key_exists($job, 'tags'))
                     <span>{{ collect($job['tags'])->map(fn($tag) => $tag['name'])->join(', ') }}</span>
