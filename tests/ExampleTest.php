@@ -1,5 +1,11 @@
 <?php
 
+use function Pest\Laravel\artisan;
+
 it('can test', function () {
-    expect(true)->toBeTrue();
+    artisan('devjobs:larajobs')
+        ->assertSuccessful();
+
+    artisan('devjobs:vuejobs')
+        ->assertSuccessful();
 });
