@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "sawirricardo/artisan-devjobs",
+    "description": "Dev Jobs in your artisan",
     "keywords": [
-        ":vendor_name",
+        "sawirricardo",
         "laravel",
-        ":package_slug"
+        "artisan-devjobs"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/sawirricardo/artisan-devjobs",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "sawirricardo",
+            "email": "sawir.ricardo@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Sawirricardo\\ArtisanDevjobs\\": "src",
+            "Sawirricardo\\ArtisanDevjobs\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Sawirricardo\\ArtisanDevjobs\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Sawirricardo\\ArtisanDevjobs\\ArtisanDevjobsServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "ArtisanDevjobs": "Sawirricardo\\ArtisanDevjobs\\Facades\\ArtisanDevjobs"
             }
         }
     },
